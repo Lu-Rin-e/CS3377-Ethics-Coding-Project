@@ -22,7 +22,7 @@ export default function PrivacyPage() {
 
   return (
     <div style={containerStyle}>
-      <div>
+      <div
         <Link
           to="/"
         >
