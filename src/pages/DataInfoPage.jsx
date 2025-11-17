@@ -1,4 +1,6 @@
 // src/pages/DataInfoPage.jsx
+import { Link } from "react-router-dom";
+
 export default function DataInfoPage() {
   const containerStyle = {
     display: "flex",
@@ -21,6 +23,11 @@ export default function DataInfoPage() {
   return (
     <div style={containerStyle}>
       <div>
+        <Link
+          to="/home"
+        >
+          Back
+        </Link>
         <h1 style={headerStyle}>Data & AI Information</h1>
 
         <p style={textStyle}>
