@@ -99,7 +99,6 @@ export default function LoginPage() {
 
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem" }}>
             <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/data-info">Data Collection Info</Link>
           </div>
 
           <p> <Link to="/signup">Sign Up</Link>
