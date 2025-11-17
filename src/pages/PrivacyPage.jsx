@@ -1,4 +1,6 @@
 // src/pages/PrivacyPage.jsx
+import { Link } from "react-router-dom";
+
 export default function PrivacyPage() {
   const containerStyle = {
     display: "flex",
@@ -20,7 +22,12 @@ export default function PrivacyPage() {
 
   return (
     <div style={containerStyle}>
-      <div>
+      <div
+        <Link
+          to="/"
+        >
+          Back
+        </Link>
         <h1 style={headerStyle}>Privacy Policy</h1>
 
         <p style={textStyle}>
