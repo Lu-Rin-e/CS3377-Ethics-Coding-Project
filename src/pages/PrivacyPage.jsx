@@ -1,4 +1,6 @@
 // src/pages/PrivacyPage.jsx
+import { Link } from "react-router-dom";
+
 export default function PrivacyPage() {
   const containerStyle = {
     display: "flex",
