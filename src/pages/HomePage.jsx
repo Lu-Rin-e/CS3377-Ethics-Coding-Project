@@ -144,9 +144,7 @@ export default function HomePage() {
         </Link>
       </div>
       <div style={footerStyle}>
-          <Link to="/privacy" style={{ color: "#2563eb" }}>
-            Data and Privacy
-          </Link>
+          <Link to="/data-info">Data Collection Info</Link>
         </div>
     </div>
   );
