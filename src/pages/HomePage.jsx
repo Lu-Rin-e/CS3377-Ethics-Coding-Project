@@ -9,6 +9,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  //used copilot assistance here
   useEffect(() => {
     setUser(auth.currentUser);
     if (!auth.currentUser) {
