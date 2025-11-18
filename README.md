@@ -5,8 +5,8 @@ Our project is a web application that allows users to upload an image and receiv
 The purpose of the feedback isn't to be a set of hard and fast rules for the user to follow, but to be a bunch of suggestions and guiding points. Art is subjective, after all. 
 
 ### Contributions:
-- Front-end: Ashley Sturm
-- Back-end: Rin Lu
+- Front-end/Firebase: Ashley Sturm
+- Back-end/AI Integration: Rin Lu
 - README: Rin Lu
 
 ## Set-up
