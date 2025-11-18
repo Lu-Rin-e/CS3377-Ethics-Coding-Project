@@ -25,7 +25,7 @@ export default function AIPage() {
         navigate("/");
     };
 
-  //used copilot assistance here
+  //used some copilot assistance here
     const handleDeleteAccount = async () => {
       if (!user) return;
       const confirmDelete = window.confirm("Are you sure you want to delete your account?");
