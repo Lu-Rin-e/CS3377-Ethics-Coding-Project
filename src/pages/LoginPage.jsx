@@ -10,6 +10,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  //used copilot assistance here
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
