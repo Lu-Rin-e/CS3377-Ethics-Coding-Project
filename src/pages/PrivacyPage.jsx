@@ -32,10 +32,10 @@ export default function PrivacyPage() {
 
         <p style={textStyle}>
           What information is collected: The only information used is your email and password, 
-          ensuring only you are able to access your account. This data is able to be deleted at anytime.
+          ensuring only you can access your account. This data can be deleted at any time.
         </p>
         <p style={textStyle}>
-        How information is protected: All login is handled by Firebase and the 2FA to ensure security
+        How information is protected: All login is handled by Firebase, and 2FA is used to ensure security.
         </p>
         <p style={textStyle}>
           Your information is not shared with any third parties. 
