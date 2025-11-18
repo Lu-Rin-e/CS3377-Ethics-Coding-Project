@@ -30,9 +30,16 @@ export default function PrivacyPage() {
         </Link>
         <h1 style={headerStyle}>Privacy Policy</h1>
 
-        <p style={textStyle}>
-          This page explains how your information is used and protected.
+         <p style={textStyle}>
+          What information is collected: The only information used is your email and password, 
+          ensuring only you can access your account. This data can be deleted at any time.
         </p>
+        <p style={textStyle}>
+        How information is protected: All login is handled by Firebase, and 2FA is used to ensure security.
+        </p>
+        <p style={textStyle}>
+          Your information is not shared with any third parties. 
+          </p>
       </div>
     </div>
   );
