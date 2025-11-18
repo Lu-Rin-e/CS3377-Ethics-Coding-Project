@@ -31,9 +31,16 @@ export default function DataInfoPage() {
         <h1 style={headerStyle}>Data & AI Information</h1>
 
         <p style={textStyle}>
-          This page explains how your uploaded images are processed,
-          how accessibility analysis works, and what data is
-          stored when using this tool.
+          How my images are stored: Images are stored locally and only sent to the AI to be analyzed. 
+          Once the analysis is complete, images can be deleted to protect privacy. 
+        </p>
+        <p style={textStyle}>
+          How AI is used: The AI analyzes your image to provide insight on accesibility information. 
+          The model will provide suggestions on the image given. 
+        </p>
+        <p style={textStyle}>
+           What data is stored: Images are not stored. The only data stored is the login information 
+           to ensure that only you can access your account. Your account can be deleted at any time. 
         </p>
       </div>
     </div>
