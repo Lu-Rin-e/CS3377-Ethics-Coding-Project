@@ -6,6 +6,7 @@ import { signOut, deleteUser } from "firebase/auth";
 
 export default function AIPage() {
   const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [analysis, setAnalysis] = useState("");
   const restartAnalysis = () => setAnalysis("");
@@ -35,11 +36,38 @@ export default function AIPage() {
         navigate("/");
     };
 
-  const handleAnalyze = () => {
-    setAnalysis("AI analysis will appear here once backend is connected.");
+  const handleAnalyze = async () => {
+    if (!image) {
+      alert("Please upload an image first.");
+      return;
+    }
+    setLoading(true);
+    setAnalysis("Analyzing image...");
+    try {
+      const form = new FormData();
+      form.append("image", image);
+
+      const resp = await fetch("/api/analyze", {
+        method: "POST",
+        body: form,
+      });
+
+      if (!resp.ok) {
+        const text = await resp.text();
+        throw new Error(text || "Server error");
+      }
+
+      const data = await resp.json();
+      setAnalysis(data.analysis || JSON.stringify(data));
+    } catch (err) {
+      console.error(err);
+      setAnalysis("Error during analysis: " + (err.message || err));
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const clearAnalysis = () => {
+    const clearAnalysis = () => {
     setAnalysis("");
     setImage(null);
   };
