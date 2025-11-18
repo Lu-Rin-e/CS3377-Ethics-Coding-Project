@@ -1,132 +1,35 @@
-# CS3377 Ethics & Coding Project - Accessibility Analyzer
+# CS3377 Ethics Coding Project Assignment - Accessibility Analyzer
 
-This project allows users to upload an image and receive feedback from OpenAI about various graphic design elements. 
+Our project is a web application that allows users to upload an image and receive feedback from OpenAI about various graphic design elements. 
 
-## Setup
+The purpose of the feedback isn't to be a set of hard and fast rules for the user to follow, but to be a bunch of suggestions and guiding points. Art is subjective, after all. 
 
-### 1. Install Dependencies
-```bash
-npm install
-```
+### Contributions:
+- Front-end: Ashley Sturm
+- Back-end: Rin Lu
+- README: Rin Lu
 
-### 2. Set Up Environment Variables
+## Set-up
 
-Create a `.env` file in the project root with your OpenAI API key:
+### 1. Change Execution Policy
+Open two terminals in Windows Powershell and in both terminals type 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process', then type 'Y'
+- The policy only changes for the current session. Closing the terminal resets the policies
+- This will let us run our scripts
 
-```
-OPENAI_API_KEY=sk-YOUR_KEY_HERE
-```
+Each terminal corresponds with front end and back end. 
 
-Don't commit `.env` to version control. The file is already listed in `.gitignore`.
+### 2. Navigate to the project's file location
+On both terminals, type 'cd' and the file path
 
-To get an API key:
-- Go to [OpenAI Platform](https://platform.openai.com)
-- Sign up or log in
-- Create an API key under "API Keys"
-- Paste it into your `.env` file
+### 3. npm install
+In the front-end terminal, type 'npm install'
 
-### 3. Run the Project
+### 4. Install OpenAI
+In the front-end terminal, type 'setx OPENAI_API_KEY "your_api_key_here"'
+- Insert an API key
 
-Open two terminals:
-
-**Terminal 1 — Backend Server** (processes image uploads)
-```bash
-npm run start:server
-```
-Expected output: `Server listening on port 3001`
-
-**Terminal 2 — Frontend Dev Server** (React + Vite)
-```bash
-npm run dev
-```
-Expected output: `Local: http://localhost:5173` (or similar)
-
-### 4. Use the App
-
-1. Navigate to `http://localhost:5173`
-2. Log in or create a new account
-3. Go to the **AI Analysis** page
-4. Upload an image
-5. Click **Run Analysis**
-6. OpenAI analyzes the image and returns feedback
-
-## How It Works
-
-1. **Frontend** (`src/pages/AIPage.jsx`): User selects an image and clicks "Run Analysis". The image is sent to the backend via `POST /api/analyze`.
-
-2. **Backend** (`server/index.js`): The server receives the image, converts it to base64, and forwards it to OpenAI's API with a prompt asking for constructive feedback on composition, lighting, clarity, and ethical concerns.
-
-3. **Response**: OpenAI returns text analysis, which the frontend displays to the user.
-
-## Security Notes
-
-- **API Key**: Stored on the server only via `.env`. Never exposed to the frontend.
-- **Image Privacy**: Images are sent to OpenAI for analysis. Review OpenAI's privacy policy if handling sensitive data.
-- **Rate Limiting**: For production, add rate limiting and user authentication checks before calling OpenAI.
-- **Moderation**: Consider adding OpenAI's moderation endpoint to check for harmful content.
-
-## Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `OPENAI_API_KEY` | Yes | Your OpenAI API key (begins with `sk-`) |
-| `PORT` | No | Server port (default: 3001) |
-
-## Troubleshooting
-
-### "ECONNREFUSED" error in Vite
-- Make sure the backend server is running on port 3001 (`npm run start:server`)
-
-### "Cannot find package 'dotenv'"
-- Run `npm install dotenv`
-
-### "OPENAI_API_KEY not set on server"
-- Check that `.env` exists in the project root
-- Verify the key starts with `sk-`
-- Restart the server after adding/updating `.env`
-
-### "Error during analysis: Server error"
-- Check the backend console for the full error message
-- Verify your OpenAI API key is valid
-- Ensure you have access to the `gpt-4o-mini` model
-
-## Model Information
-
-The backend currently uses `gpt-4o-mini` for image analysis. To use a different model:
-1. Edit `server/index.js` line 25: change the `model` field
-2. Restart the server
-
-Supported multimodal models (as of Nov 2025):
-- `gpt-4o` (latest, most capable)
-- `gpt-4o-mini` (smaller, cheaper)
-- `gpt-4-turbo` (older)
-
-## Project Structure
-
-```
-.
-├── src/
-│   ├── pages/
-│   │   └── AIPage.jsx           # Frontend UI & image upload logic
-│   ├── firebase.js              # Firebase config
-│   └── ...
-├── server/
-│   └── index.js                 # Express backend for OpenAI integration
-├── .env                         # Local config (not in git)
-├── package.json                 # Dependencies & scripts
-├── vite.config.js              # Vite config (includes /api proxy)
-└── README.md                   # This file
-```
-
-## Production Deployment
-
-For production:
-1. Host the backend on a service like Vercel, Firebase Functions, or Heroku
-2. Update the frontend proxy or API endpoint to point to the production server
-3. Use environment variables for sensitive keys (not hardcoded)
-4. Add authentication and rate limiting
-5. Consider using Firebase Cloud Functions to replace `server/index.js`
-
-## License
-
-[Your license here]
+### 5. Start
+In the back-end terminal, type 'npm run start:server'
+- You should get a message that reads 'Server listening on port 3001'
+In the front-end terminal, type 'npm run dev', then type o
+- This will open the web app in the terminal
