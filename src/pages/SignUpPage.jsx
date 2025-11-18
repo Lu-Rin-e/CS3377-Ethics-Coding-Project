@@ -10,7 +10,7 @@ export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  //used copilot assistance here
+  //used some copilot assistance here
   const handleSignUp = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
