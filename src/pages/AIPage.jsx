@@ -33,18 +33,6 @@ export default function AIPage() {
         navigate("/");
     };
 
-  /** 
-  const handleAnalyze = async () => {
-    const res = await fetch("http://localhost:3000/analyze", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ imageUrl: "TEMP" })
-    });
-
-    const data = await res.json();
-    setAnalysis(data.analysis);
-  };*/
-
   const handleAnalyze = () => {
     setAnalysis("AI analysis will appear here once backend is connected.");
   };
