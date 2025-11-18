@@ -12,7 +12,7 @@ export default function AIPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  //used copilot assistance here
+  //used some copilot assistance here
   useEffect(() => {
       setUser(auth.currentUser);
       if (!auth.currentUser) {
